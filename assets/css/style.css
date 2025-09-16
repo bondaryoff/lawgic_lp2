@@ -1683,11 +1683,13 @@ a:active {
   border-top: 1px solid var(--secontary-color);
   border-top: 0;
   width: calc(100% - 10px);
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.9375rem;
 }
-@media screen and (min-width: 1400px) {
+@media screen and (max-width: 1400px) {
   .how_works__slider {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 0.9375rem;
+    display: flex;
+    gap: none;
   }
 }
 .how_works .swiper-slide {
