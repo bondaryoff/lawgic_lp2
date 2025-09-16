@@ -1,0 +1,68 @@
+@use "sass:math"; // Імпортуємо модуль math
+
+// Міксин для конвертації px в rem
+@function rem($pixels, $context: 16) {
+  @return math.div($pixels, $context) * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size; // Фолбек для старих браузерів
+  font-size: rem($size);
+}
+
+// Розширений міксин для будь-яких властивостей
+@mixin to-rem($property, $values) {
+  $px: (
+  );
+$rem: (
+);
+
+@each $value in $values {
+  @if $value ==0 or $value ==auto {
+    $px: append($px, $value);
+    $rem: append($rem, $value);
+  }
+
+  @else if type-of($value)==number and unit($value)=='px' {
+    $px: append($px, $value);
+    $rem: append($rem, rem($value));
+  }
+
+  @else {
+    $px: append($px, $value);
+    $rem: append($rem, $value);
+  }
+}
+
+#{$property}: $px;
+#{$property}: $rem;
+}
+
+
+
+
+@mixin adaptive-clamp($min-px, $max-px, $min-width: 390px, $max-width: 1920px) {
+  $slope: calc(($max-px - $min-px) / ($max-width - $min-width));
+  $slope-vw: calc($slope * 100);
+  $intercept: calc($min-px - $slope * $min-width);
+  $clamp-value: clamp(#{$min-px}, #{$slope-vw}vw + #{$intercept}px, #{$max-px});
+
+  font-size: $clamp-value;
+
+  @media (max-width: #{$min-width}) {
+    font-size: $max-px;
+  }
+
+  @media (min-width: #{$max-width}) {
+    font-size: $min-px;
+  }
+}
+
+
+@mixin adaptive-property($property, $min-px, $max-px, $min-width: 390px, $max-width: 1920px) {
+  $slope: calc(($max-px - $min-px) / ($max-width - $min-width));
+  $slope-vw: calc($slope * 100);
+  $intercept: calc($min-px - $slope * $min-width);
+
+  #{$property}: clamp(#{$min-px}, #{$slope-vw}vw + #{$intercept}px, #{$max-px});
+}

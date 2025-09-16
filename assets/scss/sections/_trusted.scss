@@ -1,0 +1,69 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+
+.trusted {
+  border-top: 1px solid var(--secontary-color);
+
+  .row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    @media screen and (max-width: rem(650)) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    padding: rem(45) rem(50) rem(88);
+
+    &:not(:last-child) {
+      border-right: 1px solid var(--secontary-color);
+    }
+
+    @media screen and (max-width: rem(992)) {
+      padding: rem(14) rem(21);
+    }
+
+    @media screen and (max-width: rem(768)) {
+      width: 100%;
+      gap: rem(10);
+      min-height: rem(85);
+      border-bottom: 1px solid var(--secontary-color);
+
+      &:last-child {
+        border: 0;
+
+      }
+    }
+
+    span {
+      font-size: rem(95);
+      font-weight: 900;
+      background: linear-gradient(104.34deg, #E6D1BE -79.79%, #896954 75.87%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      @media screen and (max-width: rem(992)) {
+        font-size: rem(50);
+      }
+
+      @media screen and (max-width: rem(768)) {
+        font-size: rem(40);
+      }
+    }
+
+    p {
+      margin-top: rem(30);
+      font-weight: 300;
+      font-size: rem(24);
+
+      @media screen and (max-width: rem(992)) {
+        font-size: $fz14 ;
+        margin-top: rem(7);
+      }
+    }
+  }
+}

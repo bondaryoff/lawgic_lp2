@@ -1,0 +1,150 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.lawyers-slider {
+  .swiper-slide {
+    border-left: 1px solid var(--secontary-color);
+    border-right: 1px solid var(--secontary-color);
+    text-align: center;
+    overflow: hidden;
+  }
+
+  &__slider {
+    overflow: hidden;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: rem(556);
+    position: relative;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      display: block;
+      width: rem(30);
+      height: 1px;
+      right: rem(-30);
+      bottom: 1px;
+      background: var(--secontary-color);
+    }
+  }
+
+  &__name {
+    font-family: var(--ff-alumni);
+    font-size: clamp(rem(20), 0.6536vw + rem(17.451), rem(30));
+    padding-bottom: rem(3);
+    padding-top: rem(8);
+    line-height: 1.4;
+
+
+    @media screen and (max-width: rem(768)) {
+      padding-top: rem(15);
+      font-size: rem(20);
+
+    }
+  }
+
+  &__info {
+    padding: 0 rem(15) rem(15);
+    min-height: rem(220);
+  }
+
+  &__position {
+    color: #B19682;
+    font-size: clamp($fz12 , 0.35vw + rem(10.635), rem(16));
+    padding-bottom: rem(6);
+  }
+
+  &__description {
+    max-width: rem(355);
+    margin: auto;
+    font-weight: 300;
+    padding-top: rem(10);
+
+    @media screen and (max-width: rem(768)) {
+      font-size: $fz14 ;
+    }
+  }
+
+
+  &__more {
+    border-top: 1px solid var(--secontary-color);
+    border-left: 1px solid var(--secontary-color);
+    border-right: 1px solid var(--secontary-color);
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__navigation {
+    border-top: 1px solid var(--secontary-color);
+    width: rem(140);
+    height: rem(70);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media screen and (max-width: rem(768)) {
+      height: rem(45);
+      width: rem(90);
+    }
+  }
+
+  &__prev {
+    border-left: 1px solid var(--secontary-color);
+    height: rem(70);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid var(--secontary-color);
+    cursor: pointer;
+
+    @media screen and (max-width: rem(768)) {
+      height: rem(45);
+
+      svg {
+        height: rem(16);
+      }
+    }
+
+    &:not(:hover) svg path {
+      fill: #7D7D7D;
+    }
+
+    &:hover {
+      background: #F8F3EC;
+    }
+  }
+
+  &__next {
+    height: rem(70);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    @media screen and (max-width: rem(768)) {
+      height: rem(45);
+
+      svg {
+        height: rem(16);
+      }
+    }
+
+    &:not(:hover) svg path {
+      fill: #7D7D7D;
+    }
+
+    &:hover {
+      background: #F8F3EC;
+    }
+  }
+
+}

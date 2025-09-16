@@ -1,0 +1,85 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'base';
+
+.slider-lightbox {
+
+  h2 {
+    @extend .h2-title;
+  }
+
+  &__title {
+    padding-top: clamp(rem(18), 2.569vw + rem(8.974), rem(55))!important;
+    padding-bottom: clamp(rem(20), 2.209vw + rem(11.841), rem(51))!important;
+  }
+
+  &__slider {
+    overflow: hidden;
+  }
+
+  .slider-lightbox__row {
+    position: relative;
+    padding-top: clamp(rem(30), 1.979vw + rem(22.288), rem(53));
+    padding-left: clamp(rem(40), 5.333vw + rem(19.2), rem(120));
+    padding-right: clamp(rem(40), 5.333vw + rem(19.2), rem(120));
+    padding-bottom: clamp(rem(40), 1.389vw + rem(34.583), rem(60));
+
+  }
+
+  &__slide {
+    a:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('../img/lens.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: clamp(rem(48), 2.708vw + rem(37.444), rem(87));
+    }
+  }
+
+  &__nav-left {
+    cursor: pointer;
+    padding-left: clamp(rem(15), 1.042vw + rem(10.938), rem(30));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+
+    svg {
+      width: auto;
+      height: clamp(rem(52), 3.611vw + rem(37.944), rem(104));
+    }
+  }
+
+  &__nav-right {
+    cursor: pointer;
+    padding-right: clamp(rem(15), 1.042vw + rem(10.938), rem(30));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+
+    svg {
+      width: auto;
+      height: clamp(rem(52), 3.611vw + rem(37.944), rem(104));
+    }
+  }
+
+  svg:not(:hover) path {
+    fill: #A1A1A1;
+  }
+
+}

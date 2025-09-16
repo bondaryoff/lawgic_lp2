@@ -1,0 +1,194 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+// @use 'base';
+
+
+.pop-up {
+  max-width: rem(1080);
+  margin: auto;
+
+  &__row {
+    display: grid;
+    grid-template-columns: auto rem(585);
+
+    @media screen and (max-width: rem(860)) {
+      display: block;
+    }
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: rem(310);
+    background: #F6F6F6;
+  }
+
+  .wpcf7-tel {
+    border: 1px solid var(--secontary-color)!important;
+  }
+
+  &__body {
+    padding: rem(18) rem(23);
+  }
+
+  &__cover {
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media screen and (max-width: rem(860)) {
+      // height: 290px;
+      height: 27vh;
+    }
+  }
+
+
+  &__title {
+    font-weight: 600;
+    text-align: center;
+    font-family: var(--ff-alumni);
+    // padding-top: rem(74);
+    font-size: rem(48);
+    line-height: 1;
+  }
+
+  &__subtitle {
+    line-height: 1;
+    text-align: center;
+    margin-top: rem(10);
+  }
+
+  &__form {
+    padding-top: rem(58);
+    max-width: rem(496);
+    margin: auto;
+
+    form {
+      display: grid;
+      grid-template-columns: auto rem(210);
+
+      input {
+        border: 0;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0;
+        padding-left: rem(20);
+        height: rem(50);
+        margin: 0;
+        border-radius: 0;
+      }
+
+      input[type="submit"] {
+        display: none;
+      }
+
+      label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        background: linear-gradient(104.34deg, #E6D1BE -79.79%, #DFC8B4 -48.95%, #CBA78D -6.03%, #84644F 75.87%);
+        color: #fff;
+        font-weight: normal;
+
+        span {
+          display: inline-block;
+          position: relative;
+
+          &::before {
+            z-index: 10;
+            position: absolute;
+            margin-top: rem(4);
+            left: rem(-18);
+            content: '';
+            display: block;
+            background-image: url(../img/phone-arr.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: rem(13);
+            height: rem(13);
+          }
+        }
+
+        .wpcf7-spinner {
+          position: absolute;
+        }
+
+        &:hover {
+          background: linear-gradient(104.34deg, rgba(230, 209, 190, 0.8) -79.79%, rgba(223, 200, 180, 0.8) -48.95%, rgba(203, 167, 141, 0.8) -6.03%, rgba(132, 100, 79, 0.8) 75.87%);
+          box-shadow: 0 0 rem(13) rgba(255, 192, 105, 0.66);
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &__items {
+    padding-bottom: rem(40);
+
+    ul {
+      padding-top: rem(45);
+      max-width: rem(700);
+      padding-left: rem(50);
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(rem(160), 1fr));
+      column-gap: rem(30);
+      row-gap: rem(15);
+      text-align: left;
+      font-size: rem(13);
+      font-weight: 300;
+
+      span {
+        margin-right: rem(12);
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  &__bar {
+    display: flex;
+    height: rem(60);
+    align-items: center;
+  }
+
+  .feedback__s-links {
+    width: 100%;
+    justify-content: center;
+
+    ul {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  &__close {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__footer {
+    display: flex;
+    height: rem(60);
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+#pop-up .is-close-btn {
+  display: none;
+}

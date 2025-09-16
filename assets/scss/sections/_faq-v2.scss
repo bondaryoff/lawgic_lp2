@@ -1,0 +1,91 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../base';
+
+.faq2 {
+  .h1-title {
+    text-transform: uppercase;
+  }
+
+  &__item {
+    background: #fff;
+    padding-left: rem(40);
+    padding-right: rem(135);
+    padding-top: rem(50);
+    padding-bottom: rem(32);
+    background-image: url('../img/arr-bottom.svg');
+    background-repeat: no-repeat;
+    background-position: calc(100% - rem(40)) 33%;
+
+    @media screen and (max-width: rem(768)) {
+      padding-left: rem(15);
+      padding-right: rem(46);
+      padding-top: rem(24);
+      padding-bottom: rem(26);
+      background-position: calc(100% - rem(13)) 17%;
+      background-size: rem(16) auto;
+    }
+
+    &.active {
+      background-image: url('../img/arr-top.svg');
+    }
+  }
+
+  &__question {
+    font-size: rem(24);
+    line-height: 120%;
+    padding-bottom: rem(18);
+    background: linear-gradient(104.34deg, #E6D1BE -79.79%, #896954 75.87%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+
+
+
+    @media screen and (max-width: rem(768)) {
+      font-weight: 600;
+      font-size: $fz14 ;
+      padding-bottom: rem(11);
+    }
+
+    h2 {
+      padding: 0;
+    }
+  }
+
+  &__answer {
+    font-size: rem(16);
+    font-weight: 300;
+    display: none;
+    background: #FFF6EA;
+    padding: rem(17) rem(33);
+    border-radius: rem(14);
+
+
+
+    @media screen and (max-width: rem(768)) {
+      font-size: $fz12 ;
+      padding: rem(8) rem(12);
+      border-radius: rem(7);
+    }
+  }
+
+  &__subtext {
+    padding: rem(40) rem(35);
+    font-size: rem(16);
+    line-height: 1.5;
+    border-bottom: 1px solid var(--secontary-color);
+
+    @media screen and (max-width: rem(768)) {
+      font-size: $fz12 ;
+      padding: $fz14 ;
+    }
+  }
+
+
+}
+
+.faq2__item.active .faq2__answer {
+  display: block;
+}

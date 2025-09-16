@@ -1,0 +1,680 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.example {
+  &__item {
+    border-left: 1px solid var(--secontary-color);
+    border-right: 1px solid var(--secontary-color);
+    padding: rem(28);
+    margin-left: -1px;
+
+    @media screen and (max-width: rem(768)) {
+      padding: rem(18);
+    }
+  }
+
+  &__slider {
+    overflow: hidden;
+
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: rem(26);
+
+    img {
+      width: rem(80);
+      height: auto;
+    }
+
+    span {
+      font-weight: 500;
+      font-size: rem(20);
+      line-height: 90%;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: #D6B07C;
+    }
+
+    @media screen and (max-width: rem(768)) {
+      padding-bottom: rem(16);
+
+      img {
+        width: rem(50);
+        height: auto;
+      }
+
+      span {
+        font-size: rem(12);
+      }
+    }
+  }
+
+
+  &__title {
+    font-family: 'Alumni Sans';
+    font-weight: 600;
+    font-size: rem(35);
+    line-height: 110%;
+    max-width: rem(431);
+    border-bottom: 1px solid #D6B07C;
+    padding-bottom: rem(16);
+    margin-bottom: rem(16);
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 100%;
+      background: #D6B07C;
+      left: 0;
+      bottom: -3.5px;
+    }
+
+    &::after {
+      left: auto;
+      right: 0;
+    }
+
+    @media screen and (max-width: rem(768)) {
+      font-size: rem(22);
+      padding-bottom: rem(10);
+      margin-bottom: rem(10);
+    }
+
+  }
+
+  &__opys {
+    font-size: rem(15);
+    line-height: 150%;
+    padding-bottom: rem(26);
+
+    @media screen and (max-width: rem(768)) {
+      font-size: rem(9);
+      padding-bottom: rem(16);
+    }
+  }
+
+  &__rishennya {
+    b {
+      text-transform: uppercase;
+      font-family: 'Alumni Sans';
+      font-weight: 600;
+      font-size: rem(26);
+      line-height: 110%;
+      color: #D6B07C;
+      display: block;
+      padding-bottom: rem(11);
+    }
+
+    font-size: rem(15);
+    line-height: 150%;
+    padding-bottom: rem(26);
+
+    @media screen and (max-width: rem(768)) {
+      b {
+        font-size: rem(16);
+        padding-bottom: rem(7);
+      }
+
+      font-size: rem(9);
+      padding-bottom: rem(16);
+    }
+  }
+
+
+  &__more {
+    border-top: 1px solid var(--secontary-color);
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__navigation {
+    border-top: 1px solid var(--secontary-color);
+    width: rem(140);
+    height: rem(70);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media screen and (max-width: rem(768)) {
+      height: rem(45);
+      width: rem(90);
+    }
+  }
+
+  &__prev {
+    border-left: 1px solid var(--secontary-color);
+    height: rem(70);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid var(--secontary-color);
+    cursor: pointer;
+
+    @media screen and (max-width: rem(768)) {
+      height: rem(45);
+
+      svg {
+        height: rem(16);
+      }
+    }
+
+    &:not(:hover) svg path {
+      fill: #7D7D7D;
+    }
+
+    &:hover {
+      background: #F8F3EC;
+    }
+  }
+
+  &__next {
+    height: rem(70);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    @media screen and (max-width: rem(768)) {
+      height: rem(45);
+
+      svg {
+        height: rem(16);
+      }
+    }
+
+    &:not(:hover) svg path {
+      fill: #7D7D7D;
+    }
+
+    &:hover {
+      background: #F8F3EC;
+    }
+  }
+
+  &__lawyer {
+    display: grid;
+    grid-template-columns: rem(105) rem(224);
+    gap: rem(16);
+    padding-bottom: rem(26);
+
+    img {
+      display: block;
+      overflow: hidden;
+      border-radius: rem(5);
+      border: 1px solid #D6B07C;
+    }
+
+    b {
+      font-family: 'Alumni Sans';
+      font-size: rem(32);
+      line-height: rem(42);
+      letter-spacing: 1.0995px;
+      color: #212121;
+      display: block;
+
+    }
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: rem(17);
+    line-height: rem(21);
+    letter-spacing: 0.426251px;
+    color: #B19682;
+
+    @media screen and (max-width: rem(768)) {
+      grid-template-columns: rem(67) rem(143);
+      gap: rem(10);
+      padding-bottom: rem(16);
+      font-size: rem(11);
+      line-height: rem(13);
+
+      b {
+        font-size: rem(21);
+        line-height: rem(26);
+      }
+    }
+
+  }
+
+  &__text {
+    gap: rem(10);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    height: rem(54);
+    max-width: rem(377);
+
+    span {
+      font-family: 'Roboto';
+      font-weight: 500;
+      font-size: rem(24);
+      line-height: 90%;
+      text-align: center;
+      color: #FFFFFF;
+
+    }
+
+    @media screen and (max-width: rem(768)) {
+      height: rem(42);
+
+      span {
+        font-size: rem(15);
+      }
+    }
+  }
+
+  .example__slider2__wrapp {
+    padding-left: rem(160);
+    padding-right: rem(160);
+  }
+
+  .example2__item {
+    display: grid;
+    grid-template-columns: 420 1fr;
+  }
+
+  // TODO: fix slide height 
+  .swiper-slide {
+    height: calc(100% + rem(20)) !important;
+  }
+}
+
+.example2 {
+  &-wr {
+    position: relative;
+  }
+
+  &__item {
+    border-left: 1px solid var(--secontary-color);
+    border-right: 1px solid var(--secontary-color);
+    background: #fff;
+
+    margin-left: -1px;
+    display: grid;
+    grid-template-columns: 1fr rem(420);
+
+    @media screen and (max-width: rem(1220)) {
+      grid-template-columns: 1fr rem(300);
+    }
+
+    @media screen and (max-width: rem(768)) {
+      padding: rem(18);
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__slider {
+    border-left: 1px solid var(--secontary-color);
+    border-right: 1px solid var(--secontary-color);
+    width: 83%;
+    overflow: hidden;
+    margin: auto;
+  }
+
+  &__left {
+    padding: rem(30) rem(90) rem(85) rem(60);
+    border-right: 1px solid var(--secontary-color);
+
+    @media screen and (max-width: rem(1220)) {
+      padding: rem(18) rem(20);
+    }
+
+    @media screen and (max-width: rem(768)) {
+      padding: 0;
+      border-right: 0;
+      border-bottom: 1px solid var(--secontary-color);
+    }
+  }
+
+  &__top {
+    img {
+      padding-bottom: rem(30);
+      width: rem(90);
+      height: auto;
+    }
+
+    @media screen and (max-width: rem(1220)) {
+      padding-bottom: rem(0);
+
+      img {
+        width: rem(65);
+        height: auto;
+      }
+    }
+  }
+
+
+  &__title {
+    font-family: 'Alumni Sans';
+    font-weight: 600;
+    font-size: rem(48);
+    line-height: 110%;
+    border-bottom: 1px solid #D6B07C;
+    padding-bottom: rem(30);
+    margin-bottom: rem(30);
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 100%;
+      background: #D6B07C;
+      left: 0;
+      bottom: -3.5px;
+    }
+
+    &::after {
+      left: auto;
+      right: 0;
+    }
+
+    @media screen and (max-width: rem(1220)) {
+      font-size: rem(35);
+      padding-bottom: rem(20);
+      margin-bottom: rem(20);
+    }
+
+    @media screen and (max-width: rem(768)) {
+      font-size: rem(30);
+      padding-bottom: rem(15);
+      margin-bottom: rem(15);
+    }
+
+  }
+
+  &__opys {
+    font-size: rem(24);
+    line-height: 150%;
+    padding-bottom: rem(30);
+
+    @media screen and (max-width: rem(1220)) {
+      font-size: rem(18);
+      padding-bottom: rem(20);
+    }
+
+    @media screen and (max-width: rem(768)) {
+      font-size: rem(14);
+      padding-bottom: rem(15);
+    }
+  }
+
+  &__rishennya {
+    b {
+      text-transform: uppercase;
+      font-family: 'Alumni Sans';
+      font-weight: 600;
+      font-size: rem(30);
+      line-height: 110%;
+      color: #D6B07C;
+      display: block;
+      padding-bottom: rem(20);
+    }
+
+    font-size: rem(24);
+    line-height: 150%;
+    padding-bottom: rem(30);
+
+    @media screen and (max-width: rem(1220)) {
+      b {
+        font-size: rem(24);
+        padding-bottom: rem(20);
+      }
+
+      font-size: rem(18);
+      padding-bottom: rem(20);
+    }
+
+    @media screen and (max-width: rem(768)) {
+      b {
+        font-size: rem(24);
+        padding-bottom: rem(15);
+      }
+
+      font-size: rem(14);
+      padding-bottom: rem(15);
+    }
+  }
+
+  &__pagination {
+    z-index: 50;
+    bottom: rem(40) !important;
+    position: absolute;
+    left: 0;
+    display: flex;
+    gap: rem(18);
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - rem(420))!important;
+
+    .swiper-pagination-bullet {
+      width: rem(13);
+      height: rem(13);
+      background: #D9D9D9;
+      border-radius: 45px;
+    }
+
+    .swiper-pagination-bullet-active {
+      width: rem(18);
+      height: rem(18);
+      background: #84644F !important;
+      border-radius: 45px !important;
+    }
+
+    @media screen and (max-width: rem(1220)) {
+      width: calc(100% - rem(300))!important;
+      gap: rem(8);
+      bottom: rem(20) !important;
+    }
+
+    @media screen and (max-width: rem(768)) {
+      width: 100%!important;
+      bottom: rem(10) !important;
+
+      .swiper-pagination-bullet {
+        width: rem(6);
+        height: rem(6);
+        background: #D9D9D9;
+        border-radius: 45px;
+      }
+
+      .swiper-pagination-bullet-active {
+        width: rem(8);
+        height: rem(8);
+        background: #84644F !important;
+        border-radius: 45px !important;
+      }
+    }
+  }
+
+
+  &__more {
+    border-top: 1px solid var(--secontary-color);
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid var(--secontary-color);
+  }
+
+  &__navigation {
+    width: rem(140);
+    height: rem(70);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  &__lawyer {
+        position: relative;
+    z-index: 100;
+    text-align: center;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    b {
+      font-family: 'Alumni Sans';
+      font-size: rem(30);
+      letter-spacing: 1.0995px;
+      color: #212121;
+      display: block;
+      padding-top: rem(10);
+      padding-bottom: rem(10);
+
+    }
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: rem(16);
+    letter-spacing: 0.426251px;
+    color: #B19682;
+
+    @media screen and (max-width: rem(768)) {
+      padding-top: rem(15);
+      text-align: left;
+      display: grid;
+      grid-template-columns: rem(132) auto;
+      gap: rem(10);
+      padding-bottom: rem(16);
+      font-size: rem(11);
+      line-height: rem(13);
+
+      b {
+        font-size: rem(21);
+        line-height: rem(26);
+      }
+    }
+
+  }
+
+  &__text {
+    @media screen and (max-width: rem(768)) {
+      display: flex;
+      flex-direction: column;
+      gap: rem(20);
+      justify-content: space-between;
+    }
+  }
+
+  .btn {
+    margin: rem(20) auto;
+    display: block;
+    width: 100%;
+    height: rem(54);
+    max-width: rem(377);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: rem(24);
+    font-family: 'Roboto';
+    font-weight: 500;
+    color: #FFFFFF;
+
+    span {
+      &.mob {
+        display: none;
+      }
+
+    }
+
+    @media screen and (max-width: rem(1220)) {
+      height: rem(42);
+      width: 90%;
+
+      span {
+        font-size: rem(15);
+      }
+    }
+
+    @media screen and (max-width: rem(768)) {
+      margin: 0;
+      width: 100%;
+      max-width: 200px;
+
+      span {
+        &.pc {
+          display: none;
+        }
+
+        &.mob {
+          display: inline;
+        }
+      }
+    }
+  }
+
+  .example2__slider2-wrapp {
+    position: relative;
+  }
+
+  .example2__prev {
+    position: absolute;
+    left: 4%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: rem(21);
+    height: rem(104);
+    border: none;
+    filter: none;
+
+    &:hover {
+      background: none;
+    }
+
+    svg {
+      height: 100%;
+      width: auto;
+    }
+
+    @media screen and (max-width: rem(768)) {
+      width: rem(17);
+      height: rem(68);
+      left: 2%;
+    }
+  }
+
+  .example2__next {
+    position: absolute;
+    right: 4%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: rem(21);
+    height: rem(104);
+    border: none;
+    filter: none;
+
+    &:hover {
+      background: none;
+    }
+
+    svg {
+      height: 100%;
+      width: auto;
+    }
+
+    @media screen and (max-width: rem(768)) {
+      right: 2%;
+      width: rem(17);
+      height: rem(68);
+    }
+  }
+
+  // TODO: fix slide height 
+  .swiper-slide {
+    height: calc(100% + rem(20)) !important;
+  }
+}

@@ -1,0 +1,183 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.solutions {
+
+
+  &__grid {
+    padding-bottom: rem(74);
+    margin-top: -1px;
+    border-left: 1px solid var(--secontary-color);
+    border-right: 1px solid var(--secontary-color);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(60);
+
+    @media screen and (max-width: rem(992)) {
+      grid-template-columns: 1fr;
+      gap: rem(20);
+    }
+
+    @media screen and (max-width: rem(768)) {
+      padding-bottom: rem(40);
+    }
+  }
+
+  &__item {
+    background: #fff;
+    margin-left: -1px;
+    margin-right: -1px;
+    position: relative;
+    border: 1px solid var(--secontary-color);
+
+    &--last {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      flex-direction: column;
+      padding: rem(40);
+
+      .solutions__text1 {
+        font-family: 'Alumni Sans';
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 100%;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        color: #967863;
+        padding-bottom: rem(20);
+      }
+
+      .solutions__text2 {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 115%;
+        text-align: center;
+        padding-bottom: rem(50);
+
+      }
+
+      .btn {
+        display: block;
+        height: rem(67);
+        font-size: rem(24);
+        width: 100%;
+        max-width: rem(378);
+      }
+
+      @media screen and (max-width: rem(768)) {
+        height: rem(310);
+        .solutions__text1 {
+          font-size: rem(25);
+          padding-bottom: rem(13);
+        }
+
+        .solutions__text2 {
+          font-size: rem(12);
+          padding-bottom: rem(45);
+
+        }
+
+        .btn {
+          height: rem(42);
+          font-size: rem(15);
+          max-width: rem(240);
+        }
+      }
+    }
+
+    &::before {
+      top: -1px;
+      right: 50%;
+      position: absolute;
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: var(--secontary-color);
+    }
+
+    &::after {
+      bottom: -1px;
+      right: 50%;
+      position: absolute;
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: var(--secontary-color);
+    }
+  }
+
+  &__img {
+
+    img {}
+  }
+
+  &__title {
+    font-family: 'Alumni Sans';
+    font-weight: 600;
+    font-size: rem(30);
+    line-height: 100%;
+    letter-spacing: 0.01em;
+    padding: rem(30) rem(30) rem(10);
+    min-height: rem(110);
+
+    @media screen and (max-width: rem(768)) {
+      padding: rem(19);
+      min-height: auto;
+      font-size: rem(18);
+    }
+  }
+
+  &__more {
+    border-top: 1px solid var(--secontary-color);
+    display: grid;
+    grid-template-columns: 1fr rem(97);
+
+    @media screen and (max-width: rem(768)) {
+      grid-template-columns: 1fr rem(60);
+
+    }
+
+    .more {
+      display: block;
+      font-family: 'Alumni Sans';
+      font-weight: 500;
+      font-size: rem(24);
+      line-height: 100%;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      color: #8D6D58;
+      padding: rem(23) rem(30) rem(21);
+      border-right: 1px solid var(--secontary-color);
+      background-image: url('../img/arr-next.svg');
+      background-size: rem(10) auto;
+      background-repeat: no-repeat;
+      background-position: calc(100% - rem(30)) center;
+
+      @media screen and (max-width: rem(768)) {
+        background-size: rem(5) auto;
+        font-size: rem(14);
+        padding: rem(14) rem(14) rem(14) rem(19);
+      }
+    }
+
+    .more2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media screen and (max-width: rem(768)) {
+        svg {
+          width: rem(20);
+          height: auto;
+        }
+      }
+    }
+
+
+  }
+}

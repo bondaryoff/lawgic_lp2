@@ -1,0 +1,224 @@
+@use '../mixins' as *;
+@use '../variables' as *;
+
+.btn {
+  position: relative;
+
+  span {
+    position: relative;
+    // font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  &__gold span {
+    background: linear-gradient(104.34deg, #E6D1BE -79.79%, #DFC8B4 -48.95%, #CBA78D -6.03%, #84644F 75.87%);
+    color: #fff;
+
+    &:hover {
+      background: linear-gradient(104.34deg, rgba(230, 209, 190, 0.8) -79.79%, rgba(223, 200, 180, 0.8) -48.95%, rgba(203, 167, 141, 0.8) -6.03%, rgba(132, 100, 79, 0.8) 75.87%);
+      box-shadow: 0 0 rem(13) rgba(255, 192, 105, 0.66);
+      color: #fff;
+    }
+  }
+
+
+  &__silver2 {
+    span {
+      color: #B19682;
+      background: #F1F1F1;
+      gap: rem(17);
+    }
+
+    &::before {
+      width: 2px;
+      height: 100%;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #BCBCBC;
+      z-index: 5;
+
+      @media screen and (max-width: rem(768)) {
+        width: 1px;
+      }
+    }
+
+    &::after {
+      width: 2px;
+      height: 100%;
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: #696969;
+
+      @media screen and (max-width: rem(768)) {
+        width: 1px;
+      }
+    }
+
+    span {
+      &::before {
+        width: 100%;
+        height: 2px;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(90deg, #BCBCBC 0%, #696969 100%);
+
+        @media screen and (max-width: rem(768)) {
+          height: 1px;
+        }
+      }
+
+      &::after {
+        width: 100%;
+        height: 2px;
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(90deg, #BCBCBC 0%, #696969 100%);
+
+        @media screen and (max-width: rem(768)) {
+          height: 1px;
+        }
+      }
+    }
+  }
+
+  &__empty-gold {
+    &::before {
+      width: 2px;
+      height: 100%;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #B69B87;
+
+      @media screen and (max-width: rem(768)) {
+        width: 1px;
+      }
+    }
+
+    &::after {
+      width: 2px;
+      height: 100%;
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: #896954;
+
+      @media screen and (max-width: rem(768)) {
+        width: 1px;
+      }
+    }
+
+    span {
+
+      background: linear-gradient(104.34deg, #E6D1BE -79.79%, #896954 75.87%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+
+
+      &::before {
+        width: 100%;
+        height: 2px;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(90deg, #B69B87 0%, #896954 100%);
+
+        @media screen and (max-width: rem(768)) {
+          height: 1px;
+        }
+      }
+
+      &::after {
+        width: 100%;
+        height: 2px;
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(90deg, #B69B87 0%, #896954 100%);
+
+        @media screen and (max-width: rem(768)) {
+          height: 1px;
+        }
+      }
+    }
+  }
+
+  &__empty-silver {
+    &::before {
+      width: 2px;
+      height: 100%;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #BCBCBC;
+
+      @media screen and (max-width: rem(768)) {
+        width: 1px;
+      }
+    }
+
+    &::after {
+      width: 2px;
+      height: 100%;
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: #696969;
+
+      @media screen and (max-width: rem(768)) {
+        width: 1px;
+      }
+    }
+
+    span {
+      &::before {
+        width: 100%;
+        height: 2px;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(90deg, #BCBCBC 0%, #696969 100%);
+
+        @media screen and (max-width: rem(768)) {
+          height: 1px;
+        }
+      }
+
+      &::after {
+        width: 100%;
+        height: 2px;
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(90deg, #BCBCBC 0%, #696969 100%);
+
+        @media screen and (max-width: rem(768)) {
+          height: 1px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,218 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.other-help__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media screen and (max-width: rem(992)) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.other-help__left {
+  border-right: 1px solid var(--secontary-color);
+}
+
+.other-help__item {
+  width: 100%;
+  height: rem(90);
+  border-bottom: 1px solid var(--secontary-color);
+  padding-top: 0.875rem;
+  background: #fff;
+  box-sizing: border-box;
+
+}
+
+.other-help__item.active {
+  height: auto;
+}
+
+
+.other-help__title {
+  font-family: 'Alumni Sans';
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 100%;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 127px 1fr;
+  background: url(../img/arr-bottom.svg) no-repeat right center;
+  margin: 0 rem(24) 0 0px;
+  padding-bottom: 17px;
+  padding-right: rem(35);
+
+  @media screen and (max-width: rem(768)) {
+    margin: 0 rem(14) 0 0px;
+    background-size: 16px auto;
+    font-size: rem(20);
+    grid-template-columns: rem(80) 1fr;
+
+    img {
+      max-width: rem(56);
+    }
+  }
+}
+
+.other-help__title span {
+  display: block;
+  text-align: center;
+}
+
+.other-help__title:hover {
+  color: var(--primary-color);
+}
+
+.other-help__dropdown {
+  display: none;
+}
+
+.other-help__dropdown ul {
+  padding-left: 60px;
+  columns: 2;
+  column-gap: 1.1764705882rem;
+
+  @media screen and (max-width: rem(768)) {
+    padding-left: 0;
+    border-top: 1px solid var(--secontary-color);
+    margin-left: rem(20);
+    padding-left: rem(20);
+    margin-right: rem(16);
+    columns: 1;
+    padding-top: rem(30);
+
+  }
+}
+
+.other-help__dropdown li {
+  font-family: 'Alumni Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: rem(20);
+  line-height: 100%;
+  margin: 0 0 15px 0;
+  vertical-align: middle;
+
+  @media screen and (max-width: rem(768)) {
+    font-size: rem(14);
+  }
+}
+
+.other-help__dropdown li::before {
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  content: '';
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 3px;
+}
+
+.other-help__dropdown li a:hover {
+  color: #D6B07C;
+}
+
+.other-help__item.active .other-help__dropdown {
+  display: block;
+  padding-bottom: rem(30);
+
+  @media screen and (max-width: rem(768)) {
+    padding-bottom: rem(15);
+
+  }
+
+}
+
+.other-help__item.active .other-help__title {
+  background: url(../img/arr-top.svg) no-repeat right
+}
+
+.other-help__foter {
+  border-top: 1px solid var(--secontary-color);
+  padding-left: 38px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+  display: none;
+  grid-template-columns: 1fr 378px;
+
+  @media screen and (max-width: rem(768)) {
+    grid-template-columns: 1fr;
+    padding-left: 0;
+    font-size: rem(12);
+  }
+}
+
+.other-help__item.active .other-help__foter {
+  display: grid
+}
+
+.other-help__foter b {
+  margin-bottom: 5px;
+  display: block;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 120%;
+  color: #97765F;
+
+  @media screen and (max-width: rem(768)) {
+    font-size: rem(14);
+  }
+}
+
+.other-help__text {
+  height: calc(100% - 28px);
+  padding-left: 16px;
+  position: relative;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  @media screen and (max-width: rem(768)) {
+    margin-left: rem(13)
+  }
+}
+
+.other-help__text::before {
+  content: '';
+  display: block;
+  height: 100%;
+  border-radius: 10px;
+  width: 3px;
+  background: #A28470;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+.other-help__btn .btn {
+  display: block;
+  margin: auto;
+  height: 68px;
+  @media screen and (max-width: rem(768)) {
+    height: rem(45);
+  }
+}
+
+.other-help__btn .btn span {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 90%;
+  @media screen and (max-width: rem(768)) {
+    font-size: rem(16);
+  }
+}

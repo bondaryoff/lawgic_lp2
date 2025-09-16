@@ -1,0 +1,90 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.military-law {
+
+  &__slider {
+    position: relative;
+    overflow: hidden;
+    border-left: 1px solid var(--secontary-color);
+    border-right: 1px solid var(--secontary-color);
+    border-bottom: 1px solid var(--secontary-color);
+  }
+
+
+  &__item {
+    height: 100%;
+    height: rem(240);
+    box-sizing: border-box;
+    padding: rem(25) rem(23) rem(27) rem(23);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+  }
+
+  &__text {
+    font-family: 'Alumni Sans';
+    font-weight: 400;
+    font-size: rem(30);
+    line-height: 100%;
+    letter-spacing: 0.01em;
+
+  }
+
+  &__slidewr{
+    overflow: hidden;
+    border-left: 1px solid var(--secontary-color);
+    border-right: 1px solid var(--secontary-color);
+    border-bottom: 1px solid var(--secontary-color);
+  }
+  &__slide{
+    background: #E6E6E6;
+    margin: rem(23) 0;
+    .swiper-scrollbar-drag{
+      width: 100%;
+      height: rem(10);
+      border-radius: 0;
+      background: #D6B07C;
+    }
+   }
+
+  &__prev{
+    display: block;
+    cursor: pointer;
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    left: rem(10);
+    transform: translateY(-50%);
+
+    @media screen and (max-width: rem(768)) {
+      svg{
+        height: rem(58);
+        width: auto;
+      }
+    }
+
+    
+  }
+  &__next{
+    display: block;
+    cursor: pointer;
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    right: rem(10);
+    transform: translateY(-50%);
+       @media screen and (max-width: rem(768)) {
+      svg{
+        height: rem(58);
+        width: auto;
+      }
+    }
+    
+  }
+  .swiper-button-disabled{
+    opacity: 0;
+  }
+
+}

@@ -1,0 +1,94 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.family-law {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media screen and (max-width: rem(992)) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    border-bottom: 1px solid var(--secontary-color);
+    padding: rem(5) rem(25) rem(5) 0;
+
+    display: grid;
+    align-items: center;
+    grid-template-columns: rem(127) 1fr;
+    background: #fff;
+    font-family: 'Alumni Sans';
+    font-weight: 400;
+    font-size: rem(30);
+    line-height: 100%;
+
+    span {
+      display: block;
+      text-align: center;
+    }
+    @media screen and (max-width: rem(992)) {
+      border-right: 0 !important;
+    }
+
+    @media screen and (max-width: rem(768)) {
+      font-size: rem(20);
+      grid-template-columns: rem(80) 1fr;
+
+      img {
+        max-width: rem(56);
+      }
+    }
+  }
+
+  &__item:hover {
+    color: var(--primary-color);
+  }
+
+  &__item:not(:nth-child(2n)) {
+    border-right: 1px solid var(--secontary-color);
+  }
+
+  &__btn {
+    margin-top: rem(40);
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 1px solid var(--secontary-color);
+    border-bottom: 1px solid var(--secontary-color);
+
+    @media screen and (max-width: rem(768)) {
+      margin-top: rem(35);
+    }
+  }
+
+  &__btn .btn {
+    display: block;
+    margin: auto;
+    width: rem(378);
+    height: rem(68);
+
+    @media screen and (max-width: rem(768)) {
+      height: rem(45);
+      width: rem(290);
+    }
+  }
+
+  &__btn .btn span {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: rem(24);
+    line-height: 90%;
+
+    @media screen and (max-width: rem(768)) {
+      font-size: rem(16);
+    }
+
+  }
+}

@@ -1,0 +1,174 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.how_works {
+  .h2-title {
+    text-align: left;
+    padding: rem(57) rem(48) rem(47);
+    font-size: rem(40);
+
+    @media screen and (max-width: rem(768)) {
+      padding: rem(28) rem(34) rem(28);
+      font-size: rem(24);
+    }
+  }
+
+  &__slider {
+    border-top: 1px solid var(--secontary-color);
+    border-top: 0;
+    width: calc(100% - 10px);
+  }
+
+  .swiper-slide {
+    background: #fff;
+    border: 1px solid var(--secontary-color);
+    margin-top: -1px;
+
+  }
+
+  &__item {
+    margin-top: -1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: rem(36) rem(31) rem(15) rem(26);
+    position: relative;
+    min-height: rem(305);
+
+    @media screen and (max-width: rem(768)) {
+      min-height: rem(213);
+      padding: rem(20) rem(23) rem(18);
+    }
+
+  }
+
+  &__title {
+    font-family: 'Alumni Sans';
+    font-weight: 600;
+    line-height: 100%;
+    letter-spacing: 0.01em;
+    font-size: rem(38);
+    padding-bottom: rem(17);
+
+    @media screen and (max-width: rem(768)) {
+      padding-bottom: rem(10);
+      font-size: rem(28);
+
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: rem(14);
+    line-height: 150%;
+    letter-spacing: 0.01em;
+
+    @media screen and (max-width: rem(768)) {
+      font-size: rem(12);
+    }
+  }
+
+  &__number {
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    width: rem(60);
+    height: rem(60);
+    font-family: 'Alumni Sans';
+    font-weight: 600;
+    font-size: rem(48);
+    line-height: 100%;
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+    background: #8D6D58;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: rem(768)) {
+      font-size: rem(31);
+      width: rem(40);
+      height: rem(40);
+    }
+  }
+
+  &__more {
+    margin-top: -1px;
+    border: 1px solid var(--secontary-color);
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__navigation {
+    border-top: 1px solid var(--secontary-color);
+    width: rem(140);
+    height: rem(70);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media screen and (max-width: rem(768)) {
+      height: rem(45);
+      width: rem(90);
+    }
+  }
+
+  &__prev {
+    border-left: 1px solid var(--secontary-color);
+    height: rem(70);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid var(--secontary-color);
+    cursor: pointer;
+
+    @media screen and (max-width: rem(768)) {
+      height: rem(45);
+
+      svg {
+        height: rem(16);
+      }
+    }
+
+    &:not(:hover) svg path {
+      fill: #7D7D7D;
+    }
+
+    &:hover {
+      background: #F8F3EC;
+    }
+  }
+
+  &__next {
+    height: rem(70);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    @media screen and (max-width: rem(768)) {
+      height: rem(45);
+
+      svg {
+        height: rem(16);
+      }
+    }
+
+    &:not(:hover) svg path {
+      fill: #7D7D7D;
+    }
+
+    &:hover {
+      background: #F8F3EC;
+    }
+  }
+
+
+
+  // TODO: fix slide height 
+  .swiper-slide {
+    height: calc(100% + rem(20)) !important;
+  }
+
+
+}

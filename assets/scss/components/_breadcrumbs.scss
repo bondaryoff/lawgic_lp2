@@ -1,0 +1,36 @@
+@use '../mixins' as *;
+@use '../variables' as *;
+
+
+.breadcrumbs__row {
+  overflow: hidden;
+  color: #111;
+  font-weight: 200;
+  display: flex;
+  gap: rem(13);
+  font-size: $fz14 ;
+  padding: rem(17) rem(22);
+  position: relative;
+  // flex-wrap: wrap;
+  white-space: nowrap;
+
+  &.overflow {
+
+    &:after {
+      text-align: center;
+      content: '...';
+      height: rem(40);
+      width: rem(20);
+      position: absolute;
+      right: 0;
+      background: #F9F9F9;
+      top: rem(13);
+    }
+  }
+
+  @media screen and (max-width: $bp-md-768) {
+    font-size: $fz13;
+    padding: rem(14) $fz12;
+    gap: rem(5);
+  }
+}

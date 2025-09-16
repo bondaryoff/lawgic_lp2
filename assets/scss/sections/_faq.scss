@@ -1,0 +1,89 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../base';
+
+.faq {
+  .h1-title {
+    text-transform: uppercase;
+  }
+
+  &__item {
+    // padding-left: clamp(rem(15), 1.302vw + rem(9.921), rem(40));
+    padding-left: rem(40);
+    // padding-right: clamp(rem(46), 4.917vw + rem(26.917), rem(135));
+    padding-right: rem(135);
+    // padding-top: clamp(rem(24), 1.354vw + rem(18.621), rem(50));
+    padding-top: rem(50);
+    // padding-bottom: clamp(rem(26), 0.313vw + rem(24.779), rem(32));
+    padding-bottom: rem(32);
+    background-image: url('../img/plus.svg');
+    background-repeat: no-repeat;
+    // background-position: calc(100% - clamp(rem(13), 1.406vw + rem(6.593), rem(40))) clamp(17%, 1.07vw + 11.51%, 33%);
+    background-position: calc(100% - rem(40)) 33%;
+
+    @media screen and (max-width: rem(768)) {
+      padding-left: rem(15);
+      padding-right: rem(46);
+      padding-top: rem(24);
+      padding-bottom: rem(26);
+      background-position: calc(100% - rem(13)) 17%;
+    }
+
+    &.active {
+      background-image: url('../img/minus.svg');
+    }
+  }
+
+  &__question {
+    // font-size: clamp(rem(14), 0.521vw + rem(11.967), rem(24));
+    font-size: rem(24);
+    line-height: 1.2;
+    // padding-bottom: clamp(rem(11), 0.365vw + rem(9.776), rem(18));
+    padding-bottom: rem(18);
+
+    @media screen and (max-width: rem(768)) {
+      font-weight: 600;
+      font-size: $fz14 ;
+      padding-bottom: rem(11);
+    }
+
+    h2 {
+      padding: 0;
+    }
+  }
+
+  &__answer {
+    // font-size: clamp(rem(12), 0.208vw + rem(11.189), rem(16));
+    font-size: rem(16);
+    font-weight: 300;
+    display: none;
+
+    @media screen and (max-width: rem(768)) {
+      font-size: $fz12 ;
+    }
+  }
+
+  &__subtext {
+    padding: rem(40) rem(35);
+    font-size: rem(16);
+    line-height: 1.5;
+    border-bottom: 1px solid var(--secontary-color);
+
+    @media screen and (max-width: rem(768)) {
+      font-size: $fz12 ;
+      padding: $fz14 ;
+    }
+  }
+
+
+}
+
+.faq__item.active .faq__answer {
+  display: block;
+}
+
+@media screen and (max-width: rem(768)) {
+  .faq-page .case-slider {
+    display: none;
+  }
+}

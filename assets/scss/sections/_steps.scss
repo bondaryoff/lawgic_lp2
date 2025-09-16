@@ -1,0 +1,120 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.steps {
+  &__item {
+    display: grid;
+    grid-template-columns: rem(55) rem(243) 1fr;
+    border-bottom: 1px solid var(--secontary-color);
+
+    @media screen and (max-width: rem(992)) {
+      grid-template-columns: rem(55) 1fr;
+    }
+
+    @media screen and (max-width: rem(768)) {
+      grid-template-columns: rem(20) 1fr;
+    }
+  }
+
+  &__number {
+    border-right: 1px solid var(--secontary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: rem(33);
+    line-height: 100%;
+    font-family: 'Alumni Sans';
+    color: #515151;
+
+    @media screen and (max-width: rem(768)) {
+      font-size: rem(22);
+
+    }
+
+  }
+
+  &__img {
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding-right: rem(30);
+    padding-top: rem(30);
+    padding-bottom: rem(40);
+    box-sizing: border-box;
+
+    &--mob {
+      display: none;
+    }
+
+    @media screen and (max-width: rem(992)) {
+      padding-top: 0;
+      padding-bottom: 0;
+
+      &--pc {
+        display: none;
+      }
+
+      &--mob {
+        display: block;
+      }
+    }
+
+    @media screen and (max-width: rem(768)) {
+      padding-right: rem(12);
+    }
+  }
+
+  &__box {
+    background: #fff;
+    padding-top: rem(45);
+    padding-bottom: rem(50);
+
+    @media screen and (max-width: rem(992)) {
+      padding-left: rem(15);
+      display: grid;
+      grid-template-columns: rem(151) 1fr;
+      align-items: center;
+      padding-top: rem(24);
+      padding-bottom: rem(11);
+    }
+
+    @media screen and (max-width: rem(768)) {
+      grid-template-columns: rem(62) 1fr;
+    }
+
+  }
+
+  &__title {
+    font-family: 'Alumni Sans';
+    font-weight: 500;
+    font-size: rem(30);
+    line-height: 100%;
+    color: #9D7C65;
+    margin-bottom: rem(36);
+
+    @media screen and (max-width: rem(768)) {
+      font-size: rem(24);
+      margin-bottom: 0;
+    }
+
+  }
+
+  &__text {
+    font-size: rem(18);
+    padding-right: rem(90);
+    line-height: 130%;
+
+    @media screen and (max-width: rem(992)) {
+      padding-top: rem(11);
+      grid-column: span 2;
+      padding-right: rem(24);
+
+    }
+
+    @media screen and (max-width: rem(768)) {
+      font-size: rem(12);
+    }
+  }
+}

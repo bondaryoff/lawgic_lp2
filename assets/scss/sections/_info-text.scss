@@ -1,0 +1,206 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'base';
+
+.info-text {
+  h2 {
+    @extend .h2-title;
+    text-align: left;
+    padding-bottom: rem(20);
+
+    @media screen and (max-width: rem(768)) {
+      padding-bottom: rem(10);
+    }
+  }
+
+
+  .content {
+    padding: clamp(rem(25), 0.7vw + rem(22.27), rem(40)) clamp(rem(20), 0.5vw + rem(18.05), rem(30));
+
+    h2 {
+      @extend .h2-title;
+      text-align: left;
+      padding-bottom: rem(20);
+
+      @media screen and (max-width: rem(768)) {
+        padding-bottom: rem(10);
+      }
+    }
+
+
+
+    @media screen and (max-width: rem(768)) {
+      font-size: $fz12 ;
+    }
+
+    h3 {
+      font-family: var(--ff-alumni);
+      // font-size: clamp(rem(30), 1.1765vw + rem(25.412), rem(48));
+      font-size: rem(40);
+      line-height: 0.9;
+      padding-bottom: rem(20);
+
+      @media screen and (max-width: 768px) {
+        font-size: rem(26);
+        padding-bottom: rem(10);
+      }
+
+    }
+
+    h4 {
+      font-family: var(--ff-alumni);
+      // font-size: clamp(rem(30), 1.1765vw + rem(25.412), rem(48));
+      font-size: rem(35);
+      line-height: 0.9;
+      padding-bottom: rem(20);
+
+      @media screen and (max-width: 768px) {
+        font-size: rem(22);
+        padding-bottom: rem(10);
+      }
+    }
+
+    strong {
+      font-weight: bold;
+    }
+
+    p {
+      margin-bottom: rem(17);
+
+      @media screen and (max-width: rem(768)) {
+        font-size: $fz12 ;
+      }
+    }
+
+    ul,
+    ol {
+      padding-left: rem(28);
+    }
+
+    ul {
+      font-weight: normal;
+      list-style: disc;
+      // padding-bottom: 25px
+    }
+
+    ol {
+      list-style: decimal;
+
+    }
+
+    b,
+    strong {
+      font-weight: 700;
+    }
+
+    em,
+    i {
+      font-style: italic;
+    }
+
+    a {
+      color: #B19682 !important;
+      text-decoration: underline;
+    }
+
+  }
+}
+
+.info-text-content {
+  font-size: rem(16);
+  font-weight: 300;
+  padding: clamp(rem(25), 0.7vw + rem(22.27), rem(40)) clamp(rem(20), 0.5vw + rem(18.05), rem(30));
+
+  @media screen and (max-width: rem(768)) {
+    font-size: $fz12 ;
+  }
+
+  h2 {
+    @extend .h2-title;
+    text-align: left;
+    padding-bottom: rem(20);
+
+    @media screen and (max-width: rem(768)) {
+      padding-bottom: rem(10);
+    }
+  }
+
+  h3 {
+    font-family: var(--ff-alumni);
+    // font-size: clamp(rem(30), 1.1765vw + rem(25.412), rem(48));
+    font-size: clamp(rem(25), 1.3vw + rem(19.93), rem(40));
+    // font-size: rem(40);
+    line-height: 0.9;
+    padding-bottom: rem(20);
+
+    @media screen and (max-width: rem(768)) {
+      // font-size: rem(26);
+      padding-bottom: rem(10);
+    }
+  }
+
+  h4 {
+    font-family: var(--ff-alumni);
+    // font-size: clamp(rem(30), 1.1765vw + rem(25.412), rem(48));
+    font-size: rem(35);
+    // font-size: ;
+    line-height: 0.9;
+    padding-bottom: rem(20);
+
+    @media screen and (max-width: rem(768)) {
+      font-size: rem(22);
+      padding-bottom: rem(10);
+    }
+  }
+
+  strong {
+    font-weight: normal;
+  }
+
+  p {
+    font-weight: 300;
+    margin-bottom: rem(17);
+
+    @media screen and (max-width: rem(768)) {
+      font-size: $fz12 ;
+    }
+  }
+
+  ul,
+  ol {
+    font-weight: 300;
+    padding-left: rem(28);
+    padding-bottom: rem(20);
+  }
+
+  ul {
+    font-weight: normal;
+    list-style: disc;
+    // padding-bottom: 25px
+  }
+
+  ol {
+    list-style: decimal;
+
+  }
+
+  b,
+  strong {
+    font-weight: 700;
+  }
+
+  em,
+  i {
+    font-style: italic;
+  }
+
+  a {
+    color: #B19682 !important;
+    text-decoration: underline;
+  }
+}
+
+
+@media screen and (max-width: rem(768)) {
+  .info-text-content h3 {}
+}

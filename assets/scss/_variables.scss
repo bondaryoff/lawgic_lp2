@@ -1,0 +1,63 @@
+@use 'mixins' as *;
+// Variables
+// 
+// Colors
+$dark-color : #000;
+$light-color : #fff;
+$primary-color : #B19682;
+$secontary-color : #DADADA;
+
+
+$bp-sm-576: 576px;
+$bp-640: 640px;
+$bp-md-768: 768px;
+$bp-962: 962px;
+$bp-lg-992: 992px;
+$bp-xl-1200: 1200px;
+$pb-1300 : 1300px;
+$bp-xxl-1400: 1400px;
+$pb-1560 : 1560px;
+
+// Gradients
+$primary-color-gradient : linear-gradient(104.34deg, #E6D1BE -79.79%, #896954 75.87%);
+$secontary-color-gradient : linear-gradient(90deg, #BDBDBD 0%, #696969 100%);
+
+// Fonts size
+$font-size-xl :clamp(rem(24), 1.5686vw + 17.882px, rem(48));
+$font-size-lg : clamp(rem(20), 0.6536vw + 17.451px, rem(30));
+$font-size-md : clamp(rem(16), 0.2614vw + 14.981px, rem(20));
+$font-size-sm : clamp(rem(14), 0.1304vw + 13.491px, rem(16));
+$font-size-xs : clamp(rem(12), 14px + -0.104vw, rem(14));
+
+$fz11 : rem(12);
+$fz12 : rem(13);
+$fz13 : rem(14);
+$fz14 : rem(15);
+
+$container-padding: clamp(rem(20), 3.398vw + 6.748px, rem(72));
+
+
+:root {
+  --dark-color: #{$dark-color};
+  --light-color: #{$light-color};
+  --primary-color: #{$primary-color};
+  --secontary-color: #{$secontary-color};
+
+  --primary-color-gradient: #{$primary-color-gradient};
+  --secontary-color-gradient: #{$secontary-color-gradient};
+
+  --font-size-xl: #{$font-size-xl}; // 48px
+  --font-size-lg: #{$font-size-lg}; // 30px
+  --font-size-md: #{$font-size-md}; // 20px
+  --font-size-sm: #{$font-size-sm}; // 16px
+  --font-size-xs: #{$font-size-xs}; // 14px
+
+  --container-padding: #{$container-padding};
+
+  --ff-alumni: 'Alumni Sans', sans-serif;
+  --ff-roboto: 'Roboto', sans-serif;
+  --ff-roboto-condensed: 'Roboto Condensed', sans-serif;
+
+  --full-screan: calc(100vh - 101px);
+
+}

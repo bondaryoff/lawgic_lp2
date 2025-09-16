@@ -1,0 +1,80 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+
+.pag {
+  // height: rem(70);
+  display: inline-flex;
+  align-items: center;
+
+  &__wrapp {
+    margin-top: -1px;
+    display: flex;
+    justify-content: flex-end;
+    height: rem(70);
+  }
+
+
+  &__item {
+    font-size: rem(19);
+    color: #838383;
+    padding: rem(8);
+
+    // @media screen and (max-width: rem(600)) {
+ 
+    // }
+
+    // &:first-child {
+    //   display: inline-block;
+    // }
+
+    // &:nth-child(2) {
+    //   display: inline-block;
+    // }
+    // &:nth-child(3) {
+    //   display: inline-block;
+    // }
+    // &:nth-child(4) {
+    //   display: inline-block;
+    // }
+
+
+    // &:last-child {
+    //   display: inline-block;
+    // }
+
+    // &.pag__current {
+    //   display: inline-block;
+    // }
+
+  }
+
+  &__current {
+    color: #B19682;
+  }
+
+
+  &__btn {
+    border-left: 1px solid var(--secontary-color);
+    border-right: 1px solid var(--secontary-color);
+    width: rem(70);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__pages {
+    padding-left: rem(10);
+    padding-right: rem(10);
+  }
+
+  &__prev {
+    margin-right: rem(8);
+  }
+
+  &__next {
+    margin-left: rem(8);
+  }
+
+}

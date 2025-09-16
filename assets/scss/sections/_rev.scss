@@ -1,0 +1,218 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.rev {
+  &__item {
+    border-left: 1px solid var(--secontary-color);
+    border-right: 1px solid var(--secontary-color);
+    padding: rem(30) rem(40);
+    margin-left: -1px;
+  }
+
+  &__slider {
+    overflow: hidden;
+  }
+
+  &__head {
+    display: grid;
+    grid-template-columns: rem(74) 1fr;
+    gap: rem(17);
+    padding-bottom: rem(46);
+  }
+
+  &__img {
+    width: rem(74);
+    height: rem(74);
+    border-radius: 100%;
+    overflow: hidden;
+    border: 1px solid #D6B07C;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__imya {
+    font-weight: 500;
+    font-size: 28.2251px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    color: #B19682;
+  }
+
+  &__rejtyng {
+    margin-top: rem(15);
+  }
+
+  &__vidguk {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 130%;
+    letter-spacing: -0.02em;
+    padding-bottom: rem(38);
+  }
+
+
+  &__gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(17);
+
+    a {
+      display: block;
+      // height: 158px;
+      overflow: hidden;
+      position: relative;
+
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    img {
+      display: block;
+    }
+  }
+
+
+  &__title {
+    font-family: 'Alumni Sans';
+    font-weight: 600;
+    font-size: rem(35);
+    line-height: 110%;
+    max-width: rem(431);
+    border-bottom: 1px solid #D6B07C;
+    padding-bottom: rem(16);
+    margin-bottom: rem(16);
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: rem(6);
+      height: rem(6);
+      border-radius: 100%;
+      background: #D6B07C;
+      left: 0;
+      bottom: rem(-2.5);
+    }
+
+    &::after {
+      left: auto;
+      right: 0;
+    }
+
+  }
+
+  &__opys {
+    font-size: rem(15);
+    line-height: 150%;
+    padding-bottom: rem(26);
+  }
+
+  &__rishennya {
+    b {
+      text-transform: uppercase;
+      font-family: 'Alumni Sans';
+      font-weight: 600;
+      font-size: rem(26);
+      line-height: 110%;
+      color: #D6B07C;
+      display: block;
+      padding-bottom: rem(11);
+    }
+
+    font-size: rem(15);
+    line-height: 150%;
+    padding-bottom: rem(26);
+  }
+
+  &__more {
+    border-top: 1px solid var(--secontary-color);
+    border-bottom: 1px solid var(--secontary-color);
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__navigation {
+    border-top: 1px solid var(--secontary-color);
+    width: rem(140);
+    height: rem(70);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media screen and (max-width: rem(768)) {
+      height: rem(45);
+      width: rem(90);
+    }
+  }
+
+  &__prev {
+    border-left: 1px solid var(--secontary-color);
+    height: rem(70);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid var(--secontary-color);
+    cursor: pointer;
+
+    @media screen and (max-width: rem(768)) {
+      height: rem(45);
+
+      svg {
+        height: rem(16);
+      }
+    }
+
+    &:not(:hover) svg path {
+      fill: #7D7D7D;
+    }
+
+    &:hover {
+      background: #F8F3EC;
+    }
+  }
+
+  &__next {
+    height: rem(70);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    @media screen and (max-width: rem(768)) {
+      height: rem(45);
+
+      svg {
+        height: rem(16);
+      }
+    }
+
+    &:not(:hover) svg path {
+      fill: #7D7D7D;
+    }
+
+    &:hover {
+      background: #F8F3EC;
+    }
+  }
+
+
+
+  // TODO: fix slide height 
+  .swiper-slide {
+    height: calc(100% + rem(20)) !important;
+  }
+}
